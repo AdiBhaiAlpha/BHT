@@ -4,56 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Hunter Team</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header id="header"></header>
 
-    <!-- Hero Section -->
-    <section id="hero"></section>
+<?php include 'header.html'; ?>
 
-    <!-- About Section -->
-    <section id="about"></section>
+<section id="hero">
+    <?php include 'hero.html'; ?>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects"></section>
+<section id="about">
+    <?php include 'about.html'; ?>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact"></section>
+<section id="projects">
+    <?php include 'projects.html'; ?>
+</section>
 
-    <!-- Footer Section -->
-    <footer id="footer"></footer>
+<section id="contact">
+    <?php include 'contact.html'; ?>
+</section>
 
-    <script>
-        // Function to load each section dynamically
-        function loadSection(section) {
-            fetch(section + '.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById(section).innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading section:', error);
-                });
-        }
+<?php include 'footer.html'; ?>
 
-        // Load each section when the page loads
-        window.onload = function() {
-            loadSection('header');
-            loadSection('hero');
-            loadSection('about');
-            loadSection('projects');
-            loadSection('contact');
-            loadSection('footer');
-        };
-    </script>
-</body>
-</html>
+<script src="script.js"></script>
 </body>
 </html>
