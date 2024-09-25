@@ -4,54 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Black Hunter Team</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header id="header"></header>
 
-    <!-- Hero Section -->
-    <section id="hero"></section>
+<header>
+    <h1>Black Hunter Team</h1>
+</header>
 
-    <!-- About Section -->
-    <section id="about"></section>
+<section class="section" id="hero">
+    <h2>Hero Section</h2>
+    <p>Welcome to the Black Hunter Team. We specialize in cybersecurity and AI development.</p>
+</section>
+<section class="section" id="about">
+    <h2>About Us</h2>
+    <p>We are a team of experts dedicated to ensuring your digital security.</p>
+</section>
+<section class="section" id="projects">
+    <h2>Our Projects</h2>
+    <p>Check out our innovative projects in cybersecurity and AI.</p>
+</section>
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Get in touch with us for more information on our services.</p>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects"></section>
+<footer>
+    <p>&copy; 2024 Black Hunter Team. All Rights Reserved.</p>
+</footer>
 
-    <!-- Contact Section -->
-    <section id="contact"></section>
-
-    <!-- Footer Section -->
-    <footer id="footer"></footer>
-
-    <script>
-        // Function to load each section dynamically
-        function loadSection(section) {
-            fetch(section + '.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById(section).innerHTML = data;
-                })
-                .catch(error => {
-                    console.error('Error loading section:', error);
-                });
-        }
-
-        // Load each section when the page loads
-        window.onload = function() {
-            loadSection('header');
-            loadSection('hero');
-            loadSection('about');
-            loadSection('projects');
-            loadSection('contact');
-            loadSection('footer');
-        };
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
